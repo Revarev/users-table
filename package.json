@@ -1,7 +1,7 @@
 {
   "name": "users-table",
   "private": true,
-  "homepage": "https://Revarev.github.io/users-table",
+  "homepage": "https://revarev.github.io/users-table/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
