@@ -5,13 +5,14 @@ import Modal from "./components/Modal/Modal.jsx";
 
 function App() {
 
-    const [modalOpen, setModalOpen] = useState(false);
     const [users, setUsers] = useState([]);
     const [displayUsers, setDisplayUsers] = useState([]);
     const [sortConfig, setSortConfig] = useState({
             field: 'null',
             direction: 'none',
     });
+    const [modalOpen, setModalOpen] = useState(true);
+    const [selectedUser, setSelectedUser] = useState(null);
 
     useEffect(() => {
         const fetchUsers = async () => {
@@ -76,6 +77,15 @@ function App() {
         return '↕';
     };
 
+    const openUserModal = (user) => {
+        setModalOpen(true);
+        setSelectedUser(user);
+    }
+    const closeModal = () => {
+        setModalOpen(false);
+        setSelectedUser(null);
+    }
+
   return (
     <div>
         <table>
@@ -95,7 +105,7 @@ function App() {
             </thead>
             <tbody>
                 {displayUsers.map(user => (
-                    <tr key={user.id}>
+                    <tr key={user.id} onClick={() => openUserModal(user)} className="userInfo">
                         <td>{user.lastName}</td>
                         <td>{user.firstName}</td>
                         <td>{user.maidenName}</td>
@@ -109,12 +119,12 @@ function App() {
                 ))}
             </tbody>
         </table>
-        {/*<div className="modal">*/}
-        {/*    <div className="modal__content">*/}
-
-        {/*    </div>*/}
-        {/*</div>*/}
-        <Modal/>
+        {modalOpen && (
+            <Modal
+                onClose={closeModal}
+                user={selectedUser}
+            />
+        )}
     </div>
   )
 }
