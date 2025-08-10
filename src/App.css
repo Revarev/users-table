@@ -1,0 +1,78 @@
+#root {
+  /*max-width: 1400px;*/
+}
+div {
+  /*max-width: 1400px;*/
+  margin: auto;
+}
+table {
+  margin: auto;
+  max-width: 1400px;
+  width: 100%;
+  border: none;
+  margin-bottom: 20px;
+
+}
+table thead th {
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  padding: 10px 15px;
+  background: #d8d8d8;
+  font-size: 14px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  resize: horizontal;
+}
+tr:first-of-type th  {
+  min-width: 50px;
+  resize: horizontal;
+  overflow: hidden;
+  cursor: pointer;
+}
+table tbody td {
+  text-align: center;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
+}
+table thead tr th:first-child, table tbody tr td:first-child {
+  border-left: none;
+}
+table thead tr th:last-child, table tbody tr td:last-child {
+  border-right: none;
+}
+table tbody tr:nth-child(even){
+  background: #f3f3f3;
+}
+
+
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+.modal__content{
+  padding: 20px;
+  border-radius: 12px;
+  background-color: white;
+  height: 300px;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+
+}
+.cross{
+  width: 22px;
+  height: 22px;
+}
+
+
